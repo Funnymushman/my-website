@@ -1,7 +1,7 @@
 # my-website
 The main home page is home.html, with animate.js as the main JavaScript file.
 
-The online chess webpage is chess.html, which includes functions from chess.js.
+The online chess webpage is chess.html, which imports chess.js.
 
 All images used in the website are in the img/ directory.
 
