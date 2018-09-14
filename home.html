@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daniel Lee</title>
+        <link rel="stylesheet" type="text/css" href="css/960_12_col.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style type="text/css">
+            body {
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+
+                background: #000000;
+                color: #ffffff;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                text-align: center;
+            }
+            hr {
+                border-color: #ffffff;
+                border-width: 1px;
+                max-width: 100px;
+            }
+            a {
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+                color: #b5c1ad;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #ffffff;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: "Times New Roman", Georgia, Times, serif;
+            }
+            h3 {
+                font-family: Arial, sans-serif;
+            }
+            h3 a {
+                color: #65715d;
+            }
+            h3 a:hover {
+                color: #b5c1ad;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+            .bg-main {
+                color: #000000;
+                background-color: #ffffff;
+            }
+            .bg-submain {
+                color: #000000;
+                background-color: #f7f7f7
+            }
+            .text-reg {
+                color: #222222;
+                text-align: justify;
+            }
+            .green {
+                color: #55a833;
+            }
+
+            .nav {
+                display: block;
+                z-index: 1;
+                background: transparent;
+                position: fixed;
+                width: 100%;
+                font-family: Helvetica, "Comic Sans MS", Arial, sans-serif;
+                text-align: center;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            .nav a {
+                color: #000000;
+                text-decoration: none;
+                padding: 2px 0px;
+                margin: 0px 15px;
+                position: relative;
+            }
+            .nav a:hover {
+                color: #b5c1ad;
+            }
+            .nav-left {
+                float: left;
+                font-size: 110%;
+                text-transform: uppercase;
+                font-weight: 550;
+                margin: 18px 0px 15px 30px;
+            }
+            .nav-right {
+                float: right;
+                font-size: 90%;
+                margin: 30px 70px 0px 0px;
+            }
+            .nav.past-header {
+                background: url("img/navbar.JPG");
+            }
+            .nav.past-header a {
+                color: #000;
+            }
+            .nav.past-header a:hover {
+                color: #ffffff;
+            }
+            .nav-ani a:before, .nav-ani a:after {
+                position: absolute;
+                width: 0%;
+                height: 1px;
+                background: #b5c1ad;
+                content: "";
+                opacity: 0;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            .nav-ani a:before {
+                left: 0px;
+                top: 0px;
+            }
+            .nav-ani a:after {
+                right: 0px;
+                bottom: 0px;
+            }
+            .nav-ani a:hover:before, .nav-ani a:hover:after {
+                opacity: 1;
+                width: 100%;
+            }
+
+            .header {
+                width: 100%;
+                min-height: auto;
+
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-position: center;
+                background-image: url("img/wave front-jpeg.jpg");
+                background-attachment: fixed;
+
+                text-align: center;
+                color: #000000;
+            }
+            .header .header-cover {
+                position: relative;
+                text-align: center;
+                padding: 550px 0px 150px;
+                width: 100%;
+            }
+            .header .header-cover h1 {
+                font-weight: 500;
+                font-size: 80px;
+                margin-top: 0;
+                margin-bottom: 50px;
+            }
+            .header .header-cover p {
+                font-weight: 300;
+                color: #ffffff;
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+            .social a {
+                margin: 20px;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                color: #ffffff;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            .social a:hover {
+                -webkit-transition: rotate(360deg);
+                -moz-transition: rotate(360deg);
+                -o-transition: rotate(360deg);
+                transition: rotate(360deg);
+            }
+
+            section{
+                padding: 100px 0;
+            }
+            .section-heading {
+                margin-top: 0;
+                margin-bottom: 70px;
+                font-size: 50px;
+                font-family: "Trebuchet MS", sans-serif;
+            }
+
+            .bg-about {
+                color: #000000;
+                background-color: #d5e1d1;
+            }
+            .profile {
+                margin: -80px 20px 80px -50px;
+                border-radius: 50px;
+                width: 200px;
+                height: 200px;
+            }
+            .profile img {
+                width: 200px;
+                height: 200px;
+                border-radius: 100px;
+            }
+
+            .bg-history {
+                display: block;
+                background-color: #fff;
+                position: relative;
+                z-index: 0;
+            }
+            .bg-history::after {
+                content: "";
+                background: url("img/sky-history.jpg");
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                opacity: 0.5;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                position: absolute;
+                z-index: -1;
+            }
+            .gallery {
+                margin: 50px 0 20px 0;
+            }
+            .gallery img {
+                margin: 0 0px 10px 10px;
+                width: 170px;
+                height: 170px;
+                border-radius: 5px;
+                cursor: pointer;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            .gallery img:hover {
+                opacity: 0.7;
+            }
+            .rotate90 {
+                transform: rotate(90deg);
+            }
+            .rotate270 {
+                transform: rotate(270deg);
+            }
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 3;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-color: #000000;
+            }
+            .modal-content {
+                margin: auto;
+                width: 80%;
+                max-width: 600px;
+                height: 80%;
+                max-height: 600px;
+                border-radius: 10px;
+                -webkit-animation-name: zoom;
+                -moz-animation-name: zoom;
+                -o-animation-name: zoom;
+                animation-name: zoom;
+                -webkit-animation-duration: 0.5s;
+                -moz-animation-duration: 0.5s;
+                -o-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+            }
+            @-webkit-keyframes zoom {
+                from { transform: scale(0) }
+                to { transform: scale(1) }
+            }
+            @-moz-keyframes zoom {
+                from { transform: scale(0) }
+                to { transform: scale(1) }
+            }
+            @-o-keyframes zoom {
+                from { transform: scale(0) }
+                to { transform: scale(1) }
+            }
+            @keyframes zoom {
+                from { transform: scale(0) }
+                to { transform: scale(1) }
+            }
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                text-align: left;
+                top: 40%;
+                width: auto;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                transition: 0.6s ease;
+                user-select: none;
+            }
+            .prev {
+                left: 0;
+                border-radius: 0 3px 3px 0;
+            }
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+            .prev:hover, .next:hover {
+                background-color: #888888;
+            }
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            .close:hover {
+                color: #b0b0b0;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .education-detail {
+                text-align: left;
+            }
+            .end-descript {
+                margin-bottom: 50px;
+            }
+
+            .bg-project {
+                display: block;
+                background-color: #fff;
+                position: relative;
+                z-index: 0;
+            }
+            .bg-project::after {
+                content: "";
+                background: url("img/tree blur project.jpg");
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                opacity: 0.2;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                position: absolute;
+                z-index: -1;
+            }
+            .project {
+                margin-top: 50px;
+                margin-bottom: 100px;
+                height: auto;
+            }
+            .project-header {
+                color: #436543;
+                font-size: 160%;
+            }
+            .project-header a {
+                color: #436543;
+            }
+            .project img {
+                width: 280px;
+                height: 280px;
+                border-radius: 5px;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            .project img:hover {
+                opacity: 0.7;
+            }
+            .cvr {
+                padding-top: 150px;
+            }
+            iframe {
+                width: 480px;
+                height: 615px;
+                border: none;
+            }
+
+            footer {
+                clear: both;
+                background: url('img/bottom.jpg');/*#000000;*/
+                padding: 5px 10px;
+
+                text-align: center;
+                color: #ffffff;
+            }
+            footer p {
+                font-family: Helvetica, "Comic Sans MS", Arial, sans-serif;
+                font-size: 75%;
+            }
+            footer a {
+                color: #999944;
+            }
+            footer a:hover {
+                cursor: pointer;
+            }
+
+            .contact {
+                display: none;
+                position: fixed;
+                z-index: 3;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.4);
+            }
+            .contact-content {
+                position: relative;
+                background-color: #fefefe;
+                margin: 10% auto;
+                padding: 0;
+                border: 1px solid #888888;
+                width: 60%;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                -webkit-animation-name: zoom;
+                -moz-animation-name: zoom;
+                -o-animation-name: zoom;
+                animation-name: zoom;
+                -webkit-animation-duration: 0.5s;
+                -moz-animation-duration: 0.5s;
+                -o-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+            }
+            .contact-header {
+                padding: 2px 16px;
+                background-color: #55bb55;
+                color: #ffffff;
+            }
+            .contact-close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                /*-webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;*/
+            }
+            .contact-close:hover {
+                color: #b0b0b0;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .contact-body {
+                padding: 2px 16px;
+                color: #000000;
+            }
+        </style>
+    </head>
+
+    <body id="top">
+        <nav class="nav nav-ani">
+            <div class="nav-left">
+                <a class="page-scroll" href="#top">Home</a>
+            </div>
+
+            <div class="nav-right">
+                <a class="page-scroll" href="#about">About</a>
+                <a class="page-scroll" href="#history">History</a>
+                <a class="page-scroll" href="#education">Education</a>
+                <a class="page-scroll" href="#projects">Projects</a>
+            </div>
+        </nav>
+
+        <header id="header-top" class="header container_12">
+            <div class="header-cover">
+                <!-- <h1>Daniel Lee</h1> -->
+                <p>Born to be a programmer.</p>
+                <div class="social">
+                    <a href="https://www.facebook.com/csdanlee" target="_blank">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/csdanlee" target="_blank">
+                        <i class="fa fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/csdanlee" target="_blank">
+                        <i class="fa fa-instagram fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section id="about" class="bg-about">
+            <div class="container_12">
+                <div class="grid_12">
+                    <h2 class="section-heading green">About</h2>
+                </div>
+                <div class="profile grid_3">
+                    <img src="img/profile.jpg" alt="profile">
+                </div>
+                <div class="grid_8 push_1">
+                    <p class="text-reg">My name is Daniel Lee, and I'm 19 years old.
+                                I aspire to be a programmer and developer with special focus on back-end development.
+                                My favorite fields include algorithms, artificial intelligence, and machine learning.
+                                I am currently a sophomore attending the University of Michigan,
+                                and my major is computer science in the College of Engineering.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="bg-history">
+            <div class="container_12">
+                <div class="grid_12">
+                    <h2 class="section-heading green">History</h2>
+                </div>
+                <div class="grid_12">
+                    <p class="text-reg">I was born on March 23, 1999 in Bryan, TX.
+                                I spent my early childhood in Seoul, South Korea.
+                                I came to Virginia after finishing elementary school.</p>
+                </div>
+                <div class="gallery grid_12">
+                    <img src="img/gallery1.jpg">
+                    <img src="img/gallery2.jpg">
+                    <img src="img/gallery3.jpg">
+                    <img src="img/gallery4.jpg">
+                    <img src="img/gallery5.jpg">
+                    <img src="img/gallery6.jpg">
+                    <img src="img/gallery7.jpg">
+                    <img src="img/gallery8.jpg">
+                    <img src="img/gallery9.jpg">
+                    <img src="img/gallery10.jpg">
+                </div>
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img id="modal-img" class="modal-content">
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="bg-main">
+            <div class="container_12">
+                <div class="grid_12">
+                    <h2 class="section-heading green">Education</h2>
+                </div>
+                <div class="grid_3">
+                    <h3><a href="http://umich.edu/" target="_blank">University of Michigan</a></h3>
+                </div>
+                <div class="education-detail">
+                    <div class="grid_8 push_1">
+                        <h4>Bachelor of Science in Engineering - Computer Science, Minor - Mathematics</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container_12 end-descript">
+                <div class="grid_3">
+                    <p>Ann Arbor, MI</p>
+                    <p>Sep 2017 - Current</p>
+                </div>
+                <div class="education-detail">
+                    <div class="grid_8 push_1">
+                        <p>I am currently majoring computer science in the College of Engineering and minoring mathematics.
+                                    I plan on graduating on April, 2021.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container_12">
+                <div class="grid_3">
+                    <h3><a href="https://tjhsst.fcps.edu/" target="_blank">Thomas Jefferson HS Sci/Tech</a></h3>
+                </div>
+                <div class="education-detail">
+                    <div class="grid_8 push_1">
+                        <h4>High School</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container_12 end-descript">
+                <div class="grid_3">
+                    <p>Alexandria, VA</p>
+                    <p>Sep 2013 - Jun 2017</p>
+                </div>
+                <div class="education-detail">
+                    <div class="grid_8 push_1">
+                        <p>I am very honored to have attended TJHSST, one of the best public high schools in the nation.
+                                    In this magnet school, I pursued my interests in mathematics by taking high-level courses,
+                                    joining school clubs, and participating in competitions.
+                                    My study in computer science began on my second year of high school.
+                                    Once I learned basic programming in Java, I went on my own to learn Python and C++.
+                                    As I learned more data structures and algorithms, I grew passion for problem-solving.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="bg-project">
+            <div class="container_12">
+                <div class="grid_12">
+                    <h2 class="section-heading green">Projects</h2>
+                </div>
+                <div class="project cvr grid_6">
+                    <h3 class="project-header">Chess Visual Recognition</h3>
+                    <p class="text-reg">This is a yearlong research project that I conducted during my senior year of high school.
+                                As I grew interest in chess, I was curious if I could make my own chess robot.
+                                One feature in today's chess robots that has yet to be developed is detection of chess pieces.
+                                Using OpenCV in Python, I devised my own computer vision algorithm to identify chess pieces.</p>
+                </div>
+                <div class="project grid_5 push_1">
+                    <iframe src="https://drive.google.com/file/d/1OZx3Q2aINCfA4ZUfYLmNMKo2Fa-W4-Rw/preview?usp=sharing"></iframe>
+                </div>
+            </div>
+            <div class="container_12">
+                <div class="project grid_3">
+                    <a href="chess.html" target="_blank"><img src="img/chess.jpg"></a>
+                </div>
+                <div class="project grid_7 push_2">
+                    <h3 class="project-header"><a href="chess.html" target="_blank">Play Chess!</a></h3>
+                    <p class="text-reg">Chess is my favorite board game.
+                                Although I am not a competitive chess player myself, I created a pretty good chess AI.
+                                This AI implements negamax with alpha-beta pruning and a unique board evaluation.
+                                Play and see if you can beat my algorithm!</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="clearfix">
+                <div class="container_12">
+                    <p class="grid_12"><a class="page-scroll" href="#top">Home</a> | 
+                        <a class="page-scroll" href="#about">About Me</a> | 
+                        <a id="contact_button">Contact Me</a>
+                        <div id="contact_me" class="contact">
+                            <div class="contact-content">
+                                <div class="contact-header">
+                                    <span class="contact-close">&times;</span>
+                                    <h2>Contact</h2>
+                                </div>
+                                <div class="contact-body">
+                                    <p>Email: csdanlee@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="animate.js"></script>
+
+    </body>
+</html>

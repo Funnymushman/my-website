@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Play Chess!</title>
+        <style type="text/css">
+            body {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+            }
+            .chessboard {
+                width: 640px;
+                height: 640px;
+                margin: 20px 0 0 400px;
+                border: 20px solid #303030;
+            }
+            .white {
+                position: relative;
+                float: left;
+                width: 80px;
+                height: 80px;
+                background-color: #ffffff;
+                font-size: 55px;
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .white p {
+                position: absolute;
+                top: -55px;
+                left: 12.5px;
+            }
+            .black {
+                position: relative;
+                float: left;
+                width: 80px;
+                height: 80px;
+                background-color: #999999;
+                font-size: 55px;
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .black p {
+                position: absolute;
+                top: -55px;
+                left: 12.5px;
+            }
+            .possible_move {
+                display: none;
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                top: 20px;
+                left: 20px;
+                background-color: #90cc70;
+                opacity: 0.8;
+            }
+            .menu {
+                position: absolute;
+                top: 50px;
+                right: 150px;
+            }
+            .playmode {
+                background-color: #30bf30;
+                border: 2px solid #30bf30;
+                border-radius: 4px;
+                color: #ffffff;
+                width: 120px;
+                padding: 15px 0px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                -webkit-transition-duration: 0.3s;
+                -moz-transition-duration: 0.3s;
+                -o-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+            }
+            .playmode:hover {
+                background-color: #ffffff;
+                color: #000000;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="chessboard">
+            <div class="white">
+                <p id="a8"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="b8"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="c8"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="d8"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="e8"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="f8"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="g8"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="h8"></p>
+                <div class="possible_move"></div>
+            </div>
+
+            <div class="black">
+                <p id="a7"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="b7"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="c7"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="d7"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="e7"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="f7"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="g7"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="h7"></p>
+                <div class="possible_move"></div>
+            </div>
+
+            <div class="white">
+                <p id="a6"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="b6"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="c6"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="d6"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="e6"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="f6"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="g6"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="h6"></p>
+                <div class="possible_move"></div>
+            </div>
+
+            <div class="black">
+                <p id="a5"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="b5"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="c5"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="d5"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="e5"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="f5"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="g5"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="h5"></p>
+                <div class="possible_move"></div>
+            </div>
+
+            <div class="white">
+                <p id="a4"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="b4"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="c4"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="d4"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="e4"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="f4"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="g4"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="h4"></p>
+                <div class="possible_move"></div>
+            </div>
+
+            <div class="black">
+                <p id="a3"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="b3"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="c3"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="d3"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="e3"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="f3"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="g3"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="h3"></p>
+                <div class="possible_move"></div>
+            </div>
+
+            <div class="white">
+                <p id="a2"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="b2"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="c2"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="d2"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="e2"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="f2"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="g2"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="h2"></p>
+                <div class="possible_move"></div>
+            </div>
+
+            <div class="black">
+                <p id="a1"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="b1"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="c1"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="d1"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="e1"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="f1"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="black">
+                <p id="g1"></p>
+                <div class="possible_move"></div>
+            </div>
+            <div class="white">
+                <p id="h1"></p>
+                <div class="possible_move"></div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <h1>Menu</h1>
+            <button class="playmode" id="play_2p">2-Player</button>
+            <button class="playmode" id="play_ai">Play AI</button>
+            <p id="analysis"></p>
+        </div>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="chess.js"></script>
+
+    </body>
+</html>
