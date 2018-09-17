@@ -1,4 +1,6 @@
 # my-website
+Link for the website: http://www-personal.umich.edu/~junwon/home.html
+
 The main home page is home.html, with animate.js as the main JavaScript file.
 
 The online chess webpage is chess.html, which imports chess.js.
